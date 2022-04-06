@@ -14,7 +14,6 @@ $(document).ready(function() {
 
     $(".current-time").each(function() {
       var hourLabel = parseInt($(this).attr("id"));
-      //var hourLabel = parseInt($(this).attr("id").split("hour")[1]);
 
       if (hourLabel < currentTime) {
         $(this).removeClass("future");
@@ -35,17 +34,16 @@ $(document).ready(function() {
     })
   }
 
+  $("#9 .description").val(localStorage.getItem("9"));
+  $("#10 .description").val(localStorage.getItem("10"));
+  $("#11 .description").val(localStorage.getItem("11"));
+  $("#12 .description").val(localStorage.getItem("12"));
+  $("#13 .description").val(localStorage.getItem("13"));
+  $("#14 .description").val(localStorage.getItem("14"));
+  $("#15 .description").val(localStorage.getItem("15"));
+  $("#16 .description").val(localStorage.getItem("16"));
+  $("#17 .description").val(localStorage.getItem("17"));
 
-$("#hourOne.description").val(localStorage.getItem("hourOne"));
-$("#hourTwo.description").val(localStorage.getItem("hourTwo"));
-$("#hourThree.description").val(localStorage.getItem("hourThree"));
-$("#hourFour.description").val(localStorage.getItem("hourFour"));
-$("#hourFive.description").val(localStorage.getItem("hourFive"));
-$("#hourSix.description").val(localStorage.getItem("hourSix"));
-$("#hourSeven.description").val(localStorage.getItem("hourSeven"));
-$("#hourEight.description").val(localStorage.getItem("hourEight"));
-$("#hourNine.description").val(localStorage.getItem("hourNine"));
-
-presentTime();
+  presentTime();
 
 })
