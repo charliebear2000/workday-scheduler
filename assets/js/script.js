@@ -2,19 +2,22 @@ $("#currentDay").html(moment().format("dddd, MMMM Do YYYY"));
 
 $(document).ready(function() {
 
+  // get the text for the event and save it in local storage
   $(".saveBtn").on("click", function() {
     var activity = $(this).siblings(".description").val();
     var timeOfDay = $(this).parent().attr("id");
     localStorage.setItem(timeOfDay, activity);
     })
 
+  // get the current hour of the day  
   function presentTime() {
     var currentTime = moment().hour();
-    console.log(currentTime);
 
+    // compare the current hour to the time of each block
     $(".current-time").each(function() {
       var hourLabel = parseInt($(this).attr("id"));
 
+      // change background color of each event based on the current time
       if (hourLabel < currentTime) {
         $(this).removeClass("future");
         $(this).removeClass("present");
@@ -34,6 +37,7 @@ $(document).ready(function() {
     })
   }
 
+  // get events from local storage when page is refreshed
   $("#9 .description").val(localStorage.getItem("9"));
   $("#10 .description").val(localStorage.getItem("10"));
   $("#11 .description").val(localStorage.getItem("11"));
